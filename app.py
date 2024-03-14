@@ -6,6 +6,7 @@ from PIL import Image
 import numpy as np
 import numpy as np
 from keras.preprocessing import image
+from PIL import Image, ImageOps
 
 url = "https://chatgpt-42.p.rapidapi.com/conversationgpt4"
 def main():
@@ -29,21 +30,19 @@ def main():
         # st.image()
 
  
-        image_path = temp_image_path
-        image1 = Image.open(image_path)
+        # image_path = temp_image_path
+        # image1 = Image.open(image_path)
 
 
-        test_image = image.load_img("temp_image.jpg", target_size = (64, 64))
+        # image2 = ImageOps.fit(image_path, (64, 64), Image.ANTIALIAS)
+        
+        # predictions = model.predict(image2)
 
-        test_image = image.img_to_array(test_image)
-        test_image = np.expand_dims(test_image, axis = 0)
-        predictions = model.predict(test_image)
-
-        predicted_class_index = np.argmax(predictions)
+        # predicted_class_index = np.argmax(predictions)
 
 
 
-        print(f"Predicted class index: {predicted_class_index}")
+        # print(f"Predicted class index: {predicted_class_index}")
 
 
 
